@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #005dac;
+  --color-primary-container: #1976d2;
+  --color-on-primary: #ffffff;
+  
+  --color-secondary: #006e1c;
+  --color-secondary-container: #91f78e;
+  --color-on-secondary: #ffffff;
+  
+  --color-surface: #ffffff;
+  --color-surface-dim: #f8f9fb;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #414752;
+  
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  
+  --color-outline: #717783;
+  --color-outline-variant: #c1c6d4;
+  
+  --color-background: #ffffff;
+  --color-on-background: #191c1e;
+
+  --font-sans: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: var(--color-background);
+  --foreground: var(--color-on-background);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Utilities for hiding scrollbars if needed for horizontal lists */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.dark {
+  --color-background: #0f172a;   /* dark navy */
+  --color-on-background: #ffffff;
+
+  --color-surface: #111827;
+  --color-surface-dim: #1f2937;
+  --color-surface-container: #1f2937;
+  --color-surface-container-high: #374151;
+
+  --color-on-surface: #f9fafb;
+  --color-on-surface-variant: #d1d5db;
+
+  --color-outline: #4b5563;
+  --color-outline-variant: #374151;
+}
