@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🩺 Care Nest  
 ### A Simple, Intelligent Health Companion for Everyday Patients
 
@@ -30,19 +31,42 @@ Care Nest provides a **single, intuitive platform** that organizes a patient’s
 - 🤖 AI-powered assistance for better understanding and guidance  
 
 ---
+=======
+# 🪹 Care Nest
+
+Care Nest is a modern, dynamic, and personalized healthcare dashboard designed with "Compassionate Clarity." It provides a secure, highly legible, and supportive environment for users to manage their personal medical records, track daily vitals, and receive instant, empathetic guidance from a built-in AI healthcare assistant.
+
+## ✨ Features
+
+- **🔒 Secure User Authentication:** Full login and registration system powered by NextAuth.js and bcrypt.
+- **📊 Personalized Dashboard:** Isolated, user-centric data storage. Users only see and manage their own private health records.
+- **❤️ Vitals Tracking:** Interactive modals to record and track blood pressure, heart rate, and weight.
+- **💊 Medication Management:** Add daily prescriptions and track whether they've been taken.
+- **🤖 Care Bot (AI Assistant):** A floating, context-aware AI chatbot powered by the lightning-fast Groq API (`llama-3.1-8b-instant`). The assistant knows your name and recent vitals to provide personalized wellness tips.
+- **📱 Responsive & Beautiful:** Built with a utility-first approach using Tailwind CSS and Framer Motion for smooth, native-feeling animations across desktop and mobile.
+
+>>>>>>> 11a4e7e (fix: remove session.user.id check for deployment)
 ## 🛠️ Tech Stack
 
 - **Frontend:** Next.js (App Router), React 19, Tailwind CSS, Framer Motion, Lucide Icons
 - **Backend:** Next.js API Routes, NextAuth.js
 - **Database:** SQLite & Prisma ORM
+<<<<<<< HEAD
 - **AI Integration:** Vercel, Groq API
 ---
+=======
+- **AI Integration:** Vercel AI SDK, Groq API
+>>>>>>> 11a4e7e (fix: remove session.user.id check for deployment)
 
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/moonglow2003/Care-Nest.git
+=======
+git clone https://github.com/your-username/care-nest.git
+>>>>>>> 11a4e7e (fix: remove session.user.id check for deployment)
 cd care-nest
 ```
 
@@ -72,3 +96,11 @@ npx prisma db push
 ```bash
 npm run dev
 ```
+<<<<<<< HEAD
+=======
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+## 📄 License
+This project is licensed under the MIT License.
+>>>>>>> 11a4e7e (fix: remove session.user.id check for deployment)
