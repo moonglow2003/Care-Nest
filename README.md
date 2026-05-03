@@ -1,42 +1,46 @@
-<<<<<<< HEAD
-# 🩺 Care Nest  
-### A Simple, Intelligent Health Companion for Everyday Patients
 
-Care Nest is a patient-first digital health platform designed to simplify how individuals manage prescriptions, reports, medications, and doctor follow-ups—without requiring technical expertise.
+
+
+
+
+
+
+
+
+# 🩺 Care Nest
+
+**Live Demo:** [https://care-nest1234.vercel.app/](https://care-nest1234.vercel.app/)
+ 
+### A Simple, Intelligent Health Companion for Everyday Patients
+Care Nest is a patient-first digital health platform that simplifies managing prescriptions, reports, medications, daily vitals, and doctor follow-ups. It offers a secure and easy-to-use interface, along with an empathetic AI healthcare assistant, making personal health management accessible without requiring technical expertise.
 
 ---
 
-## 🚨 Problem
+## 🚨 The Problem
 
 Healthcare management is fragmented and difficult for most patients:
+- Prescriptions are often lost or hard to understand
+- Patients forget medicines or take incorrect dosages
+- Follow-up visits are missed
+- Medical history is scattered across files and apps
+- Elderly and non-tech users struggle with complex interfaces
 
-- Prescriptions are often lost or hard to understand  
-- Patients forget medicines or take incorrect dosages  
-- Follow-up visits are missed  
-- Medical history is scattered across files and apps  
-- Elderly and non-tech users struggle with complex interfaces  
-
-➡️ This leads to poor adherence, delayed care, and avoidable health risks.
+➡️ *This leads to poor adherence, delayed care, and avoidable health risks.*
 
 ---
 
-## 💡 Solution
+## 💡 The Solution
 
 Care Nest provides a **single, intuitive platform** that organizes a patient’s entire medical journey:
-
-- 📂 Centralized storage for prescriptions and reports  
-- 💊 Smart medicine reminders with dosage tracking  
-- ⏰ Automated follow-up alerts  
-- 📊 Clean, accessible dashboard for daily health overview  
-- 🤖 AI-powered assistance for better understanding and guidance  
+- 📂 Centralized storage for prescriptions and reports
+- 💊 Smart medicine reminders with dosage tracking
+- ⏰ Automated follow-up alerts
+- 📊 Clean, accessible dashboard for daily health overview
+- 🤖 AI-powered assistance for better understanding and guidance
 
 ---
-=======
-# 🪹 Care Nest
 
-Care Nest is a modern, dynamic, and personalized healthcare dashboard designed with "Compassionate Clarity." It provides a secure, highly legible, and supportive environment for users to manage their personal medical records, track daily vitals, and receive instant, empathetic guidance from a built-in AI healthcare assistant.
-
-## ✨ Features
+## ✨ Key Features
 
 - **🔒 Secure User Authentication:** Full login and registration system powered by NextAuth.js and bcrypt.
 - **📊 Personalized Dashboard:** Isolated, user-centric data storage. Users only see and manage their own private health records.
@@ -45,35 +49,24 @@ Care Nest is a modern, dynamic, and personalized healthcare dashboard designed w
 - **🤖 Care Bot (AI Assistant):** A floating, context-aware AI chatbot powered by the lightning-fast Groq API (`llama-3.1-8b-instant`). The assistant knows your name and recent vitals to provide personalized wellness tips.
 - **📱 Responsive & Beautiful:** Built with a utility-first approach using Tailwind CSS and Framer Motion for smooth, native-feeling animations across desktop and mobile.
 
->>>>>>> 11a4e7e (fix: remove const email = session.user.email;
+---
 
-    where: { userId: email } session?.user?.email ?? undefined; check for deployment)
 ## 🛠️ Tech Stack
 
 - **Frontend:** Next.js (App Router), React 19, Tailwind CSS, Framer Motion, Lucide Icons
 - **Backend:** Next.js API Routes, NextAuth.js
-- **Database:** SQLite & Prisma ORM
-<<<<<<< HEAD
-- **AI Integration:** Vercel, Groq API
----
-=======
+- **Database:** PostgreSQL & Prisma ORM
 - **AI Integration:** Vercel AI SDK, Groq API
->>>>>>> 11a4e7e (fix: remove const email = session.user.email;
+- **Deployment:** Vercel
 
-    where: { userId: email } session?.user?.email ?? undefined; check for deployment)
+---
 
-## 🚀 Getting Started
+## 🚀 Getting Started Locally
 
 ### 1. Clone the repository
 ```bash
-<<<<<<< HEAD
 git clone https://github.com/moonglow2003/Care-Nest.git
-=======
-git clone https://github.com/your-username/care-nest.git
->>>>>>> 11a4e7e (fix: remove const email = session.user.email;
-
-    where: { userId: email } session?.user?.email ?? undefined; check for deployment)
-cd care-nest
+cd Care-Nest
 ```
 
 ### 2. Install dependencies
@@ -88,12 +81,15 @@ Create a `.env.local` file in the root directory and add the following:
 NEXTAUTH_SECRET="your_secure_random_string"
 NEXTAUTH_URL="http://localhost:3000"
 
+# PostgreSQL Database URL (e.g., from Neon.tech or Supabase)
+DATABASE_URL="postgresql://user:password@host/database"
+
 # Groq API Key for Care Bot Assistant
 GROQ_API_KEY="gsk_YourGroqApiKeyHere"
 ```
 
 ### 4. Initialize the Database
-Push the Prisma schema to your local SQLite database to create the necessary tables:
+Push the Prisma schema to your database to create the necessary tables:
 ```bash
 npx prisma db push
 ```
@@ -102,13 +98,10 @@ npx prisma db push
 ```bash
 npm run dev
 ```
-<<<<<<< HEAD
-=======
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+
+---
 
 ## 📄 License
 This project is licensed under the MIT License.
->>>>>>> 11a4e7e (fix: remove const email = session.user.email;
-
-    where: { userId: email } session?.user?.email ?? undefined; check for deployment)
