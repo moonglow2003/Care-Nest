@@ -42,7 +42,7 @@ export default function SplashScreen() {
           <HeartPulse size={64} className="text-white" />
         </motion.div>
         <h1 className="text-4xl font-bold font-sans tracking-tight">Care Nest</h1>
-        <p className="text-primary-fixed-dim text-lg mt-2">Compassionate Clarity</p>
+        <p className="text-primary-fixed-dim text-lg mt-2">Your Health Companion</p>
       </motion.div>
     </div>
   );

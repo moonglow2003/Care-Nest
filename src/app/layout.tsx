@@ -11,7 +11,7 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "Care Nest | Compassionate Clarity",
+  title: "Care Nest | Your Health Companion",
   description: "A serene, highly legible, and supportive medical management environment.",
 };
 
