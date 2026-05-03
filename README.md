@@ -45,7 +45,9 @@ Care Nest is a modern, dynamic, and personalized healthcare dashboard designed w
 - **🤖 Care Bot (AI Assistant):** A floating, context-aware AI chatbot powered by the lightning-fast Groq API (`llama-3.1-8b-instant`). The assistant knows your name and recent vitals to provide personalized wellness tips.
 - **📱 Responsive & Beautiful:** Built with a utility-first approach using Tailwind CSS and Framer Motion for smooth, native-feeling animations across desktop and mobile.
 
->>>>>>> 11a4e7e (fix: remove session.user.id check for deployment)
+>>>>>>> 11a4e7e (fix: remove const email = session.user.email;
+
+    where: { userId: email } session?.user?.email ?? undefined; check for deployment)
 ## 🛠️ Tech Stack
 
 - **Frontend:** Next.js (App Router), React 19, Tailwind CSS, Framer Motion, Lucide Icons
@@ -56,7 +58,9 @@ Care Nest is a modern, dynamic, and personalized healthcare dashboard designed w
 ---
 =======
 - **AI Integration:** Vercel AI SDK, Groq API
->>>>>>> 11a4e7e (fix: remove session.user.id check for deployment)
+>>>>>>> 11a4e7e (fix: remove const email = session.user.email;
+
+    where: { userId: email } session?.user?.email ?? undefined; check for deployment)
 
 ## 🚀 Getting Started
 
@@ -66,7 +70,9 @@ Care Nest is a modern, dynamic, and personalized healthcare dashboard designed w
 git clone https://github.com/moonglow2003/Care-Nest.git
 =======
 git clone https://github.com/your-username/care-nest.git
->>>>>>> 11a4e7e (fix: remove session.user.id check for deployment)
+>>>>>>> 11a4e7e (fix: remove const email = session.user.email;
+
+    where: { userId: email } session?.user?.email ?? undefined; check for deployment)
 cd care-nest
 ```
 
@@ -103,4 +109,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## 📄 License
 This project is licensed under the MIT License.
->>>>>>> 11a4e7e (fix: remove session.user.id check for deployment)
+>>>>>>> 11a4e7e (fix: remove const email = session.user.email;
+
+    where: { userId: email } session?.user?.email ?? undefined; check for deployment)

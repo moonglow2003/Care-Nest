@@ -89,7 +89,7 @@ export default function ReportsPage() {
         ) : (
           reports.map((report, index) => (
             <motion.div
-              key={report.id}
+              key={report.email}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}

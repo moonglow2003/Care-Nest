@@ -120,7 +120,7 @@ export default function CalendarPage() {
         ) : (
           appointments.map((appt, index) => (
             <motion.div
-              key={appt.id}
+              key={appt.email}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}

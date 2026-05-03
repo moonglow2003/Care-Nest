@@ -3,13 +3,15 @@
 import { useState } from "react";
 import { useChat } from "ai/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Bot, User } from "lucide-react";
+import { MessageCircle, X, Send, Bot } from "lucide-react";
 import { useSession } from "next-auth/react";
 
 export function ChatAssistant() {
   const { status } = useSession();
   const [isOpen, setIsOpen] = useState(false);
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat();
+
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } =
+    useChat();
 
   // Only show the assistant if the user is logged in
   if (status !== "authenticated") {
@@ -34,7 +36,10 @@ export function ChatAssistant() {
                   <Bot className="w-6 h-6" />
                   <span className="font-semibold">Care Bot</span>
                 </div>
-                <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 p-1 rounded-full">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="hover:bg-white/20 p-1 rounded-full"
+                >
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -44,11 +49,21 @@ export function ChatAssistant() {
                 {messages.length === 0 ? (
                   <div className="flex-1 flex flex-col items-center justify-center text-on-surface-variant/60">
                     <Bot className="w-12 h-12 mb-2 opacity-50" />
-                    <p className="text-center text-sm">Hi! I'm Care Bot. How can I help you with your health today?</p>
+                    <p className="text-center text-sm">
+                      Hi! I'm Care Bot. How can I help you with your health
+                      today?
+                    </p>
                   </div>
                 ) : (
-                  messages.map((m) => (
-                    <div key={m.id} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                  messages.map((m, index) => (
+                    <div
+                      key={m.id ?? index}
+                      className={`flex ${
+                        m.role === "user"
+                          ? "justify-end"
+                          : "justify-start"
+                      }`}
+                    >
                       <div
                         className={`max-w-[85%] rounded-2xl p-3 text-sm ${
                           m.role === "user"
@@ -56,31 +71,59 @@ export function ChatAssistant() {
                             : "bg-surface text-on-surface border border-outline-variant rounded-bl-none shadow-sm"
                         }`}
                       >
-                        {m.content}
+                        {typeof m.content === "string"
+                          ? m.content
+                          : JSON.stringify(m.content)}
                       </div>
                     </div>
                   ))
                 )}
+
                 {error && (
                   <div className="flex justify-center mt-2">
                     <div className="bg-error/10 text-error border border-error/20 rounded-xl p-3 text-sm text-center max-w-[85%]">
-                      {error.message || "An error occurred while connecting to the AI. Please check your API key."}
+                      {error.message ||
+                        "An error occurred while connecting to the AI."}
                     </div>
                   </div>
                 )}
+
                 {isLoading && !error && (
                   <div className="flex justify-start">
                     <div className="bg-surface text-on-surface border border-outline-variant rounded-2xl rounded-bl-none shadow-sm p-3 flex gap-1">
-                      <motion.div className="w-2 h-2 bg-primary/60 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6 }} />
-                      <motion.div className="w-2 h-2 bg-primary/60 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }} />
-                      <motion.div className="w-2 h-2 bg-primary/60 rounded-full" animate={{ y: [0, -5, 0] }} transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }} />
+                      <motion.div
+                        className="w-2 h-2 bg-primary/60 rounded-full"
+                        animate={{ y: [0, -5, 0] }}
+                        transition={{ repeat: Infinity, duration: 0.6 }}
+                      />
+                      <motion.div
+                        className="w-2 h-2 bg-primary/60 rounded-full"
+                        animate={{ y: [0, -5, 0] }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 0.6,
+                          delay: 0.2,
+                        }}
+                      />
+                      <motion.div
+                        className="w-2 h-2 bg-primary/60 rounded-full"
+                        animate={{ y: [0, -5, 0] }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 0.6,
+                          delay: 0.4,
+                        }}
+                      />
                     </div>
                   </div>
                 )}
               </div>
 
               {/* Input Area */}
-              <form onSubmit={handleSubmit} className="p-3 bg-surface border-t border-outline-variant flex gap-2">
+              <form
+                onSubmit={handleSubmit}
+                className="p-3 bg-surface border-t border-outline-variant flex gap-2"
+              >
                 <input
                   type="text"
                   value={input}
@@ -107,7 +150,11 @@ export function ChatAssistant() {
             isOpen ? "bg-secondary text-white" : "bg-primary text-white"
           }`}
         >
-          {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
+          {isOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <MessageCircle className="w-6 h-6" />
+          )}
         </button>
       </div>
     </>

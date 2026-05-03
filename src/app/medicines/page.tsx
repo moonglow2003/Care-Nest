@@ -115,7 +115,7 @@ export default function MedicinesPage() {
         ) : (
           medicines.map((med, index) => (
             <motion.div
-              key={med.id}
+              key={med.id }
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
@@ -148,7 +148,7 @@ export default function MedicinesPage() {
                   variant="outline" 
                   size="sm" 
                   className="rounded-full px-4 h-10 border-primary text-primary"
-                  onClick={() => handleTakeMedicine(med.id)}
+                  onClick={() => handleTakeMedicine(med.id )}
                 >
                   Take
                 </Button>
