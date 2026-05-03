@@ -4,7 +4,7 @@ import * as React from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Home, FileText, Pill, Calendar, Settings, Sun, Moon } from "lucide-react";
+import { Home, FileText, Pill, Calendar, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -18,28 +18,6 @@ const NAV_ITEMS = [
 export function Navigation() {
   const pathname = usePathname();
 
-  const [dark, setDark] = React.useState(false);
-
-  // Load saved theme
-  React.useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      setDark(true);
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    if (dark) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setDark(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setDark(true);
-    }
-  };
 
   // Hide navigation on splash, login, and signup
   if (pathname === "/" || pathname === "/login" || pathname === "/signup") {
@@ -48,16 +26,7 @@ export function Navigation() {
 
   return (
     <>
-      {/* 🌙 Theme Toggle Button */}
-      <button
-        onClick={toggleTheme}
-        className="fixed top-4 right-4 z-50 p-2 rounded-full 
-        bg-[var(--color-surface-container)] 
-        text-[var(--color-on-surface)] 
-        shadow-md border border-[var(--color-outline-variant)]"
-      >
-        {dark ? <Sun size={18} /> : <Moon size={18} />}
-      </button>
+
 
       {/* 📱 Bottom Navigation */}
       <div

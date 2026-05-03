@@ -1,7 +1,8 @@
 "use client";
 
+import * as React from "react";
 import { motion } from "framer-motion";
-import { User, Bell, Shield, CircleHelp, LogOut } from "lucide-react";
+import { User, Bell, Shield, CircleHelp, LogOut, Sun, Moon } from "lucide-react";
 import { ActionCard } from "@/components/ui/ActionCard";
 import { useSession, signOut } from "next-auth/react";
 
@@ -10,6 +11,28 @@ export default function SettingsPage() {
 
   const handleSignOut = async () => {
     await signOut({ callbackUrl: "/login" });
+  };
+
+  const [dark, setDark] = React.useState(false);
+
+  React.useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      setDark(true);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (dark) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setDark(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setDark(true);
+    }
   };
 
   const initials = session?.user?.name ? session.user.name.substring(0, 2).toUpperCase() : "U";
@@ -64,6 +87,16 @@ export default function SettingsPage() {
         text-[var(--color-outline)]">
           Preferences
         </h3>
+
+        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
+          <ActionCard
+            icon={dark ? <Sun className="text-[var(--color-primary)]" /> : <Moon className="text-[var(--color-primary)]" />}
+            title="App Theme"
+            subtitle={dark ? "Dark Mode Active" : "Light Mode Active"}
+            variant="neutral"
+            onClick={toggleTheme}
+          />
+        </motion.div>
 
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
           <ActionCard
